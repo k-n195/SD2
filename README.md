@@ -48,3 +48,54 @@ An Agile-inspired approach was used during development, where features were buil
 - As a user, I want to log in securely so that my data is protected.
 - As a user, I want an easy-to-use interface so that I can manage tasks efficiently.
 These user stories supported an iterative development process, where features were gradually implemented, tested, and refined. This reflects Agile principles such as continuous improvement, user-focused design, and incremental delivery.
+
+## 3. Scrum Backlog
+
+The following backlog was created using a Scrum-inspired approach to organise and prioritise features required for the system. Each feature was assigned a priority level and included a description and test criteria to ensure it met the project requirements.
+<img width="1375" height="621" alt="image" src="https://github.com/user-attachments/assets/45a97854-69f6-4f02-910e-100041ea22cd" />
+
+The following backlog was created using a Scrum-inspired approach to organise and prioritise features required for the system. Each feature was assigned a priority level and included a description and test criteria to ensure it met the project requirements.
+
+## 4. System Design
+
+### 4.1 Overall Architecture
+The system was built using a simple client-server structure. The frontend (what the user sees) was created using HTML and CSS, while PHP was used for the backend to handle all the logic and data processing.
+
+Whenever a user performs an action, such as adding or completing a task, the request is sent to the PHP backend. The backend then processes the request and updates the MySQL database. After that, the updated information is retrieved and displayed back to the user.
+
+This approach keeps everything organised by separating the user interface, the logic, and the data. It also makes the system easier to manage and improve in the future.
+
+---
+
+### 4.2 Database Design
+The system uses a MySQL database to store all task-related data. The main table used is the "tasks" table, which holds all the information needed for each task.
+
+The table includes the following fields:
+- id: A unique ID for each task
+- user_id: Links the task to a specific user
+- title: The name of the task
+- description: Extra details about the task
+- due_date: The deadline for the task
+- priority: Indicates importance (high, medium, low)
+- category: Groups tasks (e.g. work, study, personal)
+- status: Shows whether the task is pending or completed
+- created_at: Records when the task was created
+
+This structure allows the system to easily store, retrieve, and update tasks. It also supports features like filtering tasks by date and tracking completed tasks.
+
+---
+
+### 4.3 User Interface Design
+The user interface was designed to be clean, simple, and easy to use. The aim was to make sure users can quickly understand how to use the system without any confusion.
+
+The main pages in the system include:
+- Dashboard: Shows an overview of tasks, including total tasks, completed tasks, and tasks due today
+- Tasks Page: Displays all active tasks with options to complete or delete them
+- Completed Tasks Page: Shows tasks that have been completed, with options to restore or remove them
+- Add Task Page: Allows users to create new tasks
+- Calendar: Displays tasks visually based on their due dates, including indicators for days with tasks
+
+A sidebar navigation menu is used across all pages so users can move between sections easily. The design is consistent across the system, which improves usability and makes the overall experience smoother.
+
+
+
