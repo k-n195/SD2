@@ -97,5 +97,22 @@ The main pages in the system include:
 
 A sidebar navigation menu is used across all pages so users can move between sections easily. The design is consistent across the system, which improves usability and makes the overall experience smoother.
 
+Screenshot 1: Dashboard:
+<img width="1440" height="810" alt="image" src="https://github.com/user-attachments/assets/a8ee633f-169b-4371-bc4a-8ac9c0dbeecf" />
+
+Screenshot 2- Tasks:
+<img width="1440" height="807" alt="image" src="https://github.com/user-attachments/assets/11805ac8-8857-42bb-a8f6-287a511ffbb6" />
+
+Screenshot 3- Completed tasks:
+<img width="1440" height="809" alt="image" src="https://github.com/user-attachments/assets/f450ecd4-6202-4db5-8255-d7ba8afa2983" />
+
+Screenshot 4- Add Tasks Form:
+<img width="1440" height="810" alt="image" src="https://github.com/user-attachments/assets/9f3c4fe8-6852-4a17-bc9f-233ba2bce411" />
+
+
+
+
+
+
 
 
