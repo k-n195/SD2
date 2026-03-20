@@ -162,6 +162,20 @@ Key techniques included CRUD operations for managing tasks, session handling for
 
 These tools and techniques were selected as they are appropriate for web-based system development, allowing efficient implementation, testing, and maintenance while meeting both functional and non-functional requirements.
 
+8. Testing and Validation
+
+The system was tested throughout development to ensure it met both user and system requirements. Testing focused on core features such as user login, task creation, task completion, deletion, restoring tasks, and calendar updates.
+
+Each function was tested using normal, boundary, and invalid inputs. For example, task creation was tested with valid inputs, empty fields, and incorrect data formats to ensure proper validation. The login system was tested to confirm that only registered users could access the system using session control.
+
+Special attention was given to the calendar feature, where an issue was identified that completed or deleted tasks were still showing as active (green dots). This was resolved by updating the database query to only display tasks where the status is not completed.
+
+Testing confirmed that all major features work as expected and the system meets its original design requirements. Any issues found during testing were fixed and re-tested to ensure reliability and usability.
+
+PLEASE SEE TEST SD2 WORD DOCUMENT IN REPO FOR TEST TABLE.
+
+
+
 
 
 
