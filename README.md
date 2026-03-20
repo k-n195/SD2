@@ -81,6 +81,10 @@ The table includes the following fields:
 
 This structure allows the system to easily store, retrieve, and update tasks. It also supports features like filtering tasks by date and tracking completed tasks.
 
+ERD:
+<img width="1400" height="900" alt="image" src="https://github.com/user-attachments/assets/11e7de6b-23fa-4983-9380-e55468430b03" />
+
+
 ---
 
 ### 4.3 User Interface Design
