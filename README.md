@@ -109,6 +109,62 @@ Screenshot 3- Completed tasks:
 Screenshot 4- Add Tasks Form:
 <img width="1440" height="810" alt="image" src="https://github.com/user-attachments/assets/9f3c4fe8-6852-4a17-bc9f-233ba2bce411" />
 
+## 5. Implementation
+The system was developed using a combination of frontend and backend technologies. HTML and CSS were used to design the layout and overall appearance of the application, focusing on keeping the interface clean and easy to use. PHP was used for the backend to handle all the logic, including processing user input, managing sessions, and communicating with the database. MySQL was used to store all task-related data such as titles, descriptions, due dates, and task status. XAMPP was used as the local development environment, allowing the application to run on a local server during development and testing.
+
+The system includes several key features that were developed step by step throughout the project. Users are able to add new tasks by entering details such as title, description, due date, priority, and category. These tasks are then stored in the database and displayed on the tasks page. Users can view all their active tasks in a structured list, making it easy to see what needs to be done. Tasks can be marked as completed, which moves them to the completed tasks section. If needed, completed tasks can also be restored back to the main task list. The system also allows users to delete tasks permanently, removing them completely from the database.
+
+A mini calendar feature was implemented on the dashboard to give users a visual overview of their tasks. Instead of acting as a full calendar system, it highlights specific dates that contain tasks using small indicators. Users can click on a date to view tasks scheduled for that particular day. This provides a simple but effective way to track tasks without overcomplicating the interface.
+
+Additionally, the dashboard includes a "Due Today" section, which highlights tasks that need to be completed on the current date. A consistent navigation system was implemented using a sidebar, allowing users to move between different pages easily. All features were developed incrementally and tested as they were built, which helped identify and fix issues early.
+
+Below is an example of how a new task is added to the database using PHP:
+
+php:
+$sql = "INSERT INTO tasks (user_id, title, description, due_date, priority, category, status)
+VALUES ('$user_id', '$title', '$description', '$due_date', '$priority', '$category', '$status')";
+
+This query takes user input from the form and inserts it into the database. Session handling was also implemented to ensure that only logged-in users can access the system:
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+## 6. Project Management
+The development of this project followed an Agile-inspired approach, where the system was built gradually in stages rather than all at once. Features were implemented step by step, tested, and then improved based on any issues that were identified. This allowed the project to develop in a flexible way and made it easier to fix problems early.
+
+The development process began with planning the layout and structure of the system, including how tasks would be stored and displayed. After this, the basic functionality such as adding and viewing tasks was implemented. Once the core features were working, additional features such as completing tasks, restoring tasks, and deleting tasks were added.
+
+As development progressed, more advanced functionality such as the mini calendar and "Due Today" section were introduced. These features were tested and refined to ensure they worked correctly and improved the overall usability of the system.
+
+Throughout the project, regular testing and adjustments were made. For example, an issue was identified where completed tasks were still showing as active on the calendar. This was resolved by updating the logic to ensure only active tasks were displayed. Other improvements included fixing layout inconsistencies and improving navigation between pages.
+
+A simplified development timeline is shown below:
+
+| Week | Work Completed |
+|------|---------------|
+| Week 1 | Initial planning, system structure, and UI design |
+| Week 2 | Implementing database, login system, and task creation |
+| Week 3 | Adding task completion, deletion, restore features, and mini calendar |
+| Week 4 | Testing, bug fixes (including calendar issues), and final UI improvements |
+
+This iterative process reflects Agile principles such as continuous improvement, incremental development, and responding to issues as they arise.
+
+7. Tools and Techniques
+
+This project was built using simple and practical tools. Visual Studio Code was used to write and manage the code, and XAMPP was used to run a local server and connect to the database during development and testing.
+
+PHP was used for the backend to handle forms, sessions, and database interaction. MySQL was used to store and manage user and task data. HTML was used to structure the pages, and CSS was used to style the interface and keep it consistent across all pages.
+
+Key techniques included CRUD operations for managing tasks, session handling for secure login, and conditional logic to control features such as task status and calendar indicators.
+
+These tools and techniques were selected as they are appropriate for web-based system development, allowing efficient implementation, testing, and maintenance while meeting both functional and non-functional requirements.
+
+
+
+
 
 
 
