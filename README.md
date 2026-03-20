@@ -175,6 +175,20 @@ Testing confirmed that all major features work as expected and the system meets 
 PLEASE SEE TEST SD2 WORD DOCUMENT IN REPO FOR TEST TABLE.
 
 
+Section 9:
+Overall, the project was successful in meeting its main aim of creating a functional and user-friendly task management system. Most of the core features were implemented correctly, including adding tasks, viewing tasks, completing tasks, restoring tasks, and deleting tasks. The system also includes a mini calendar and a “Due Today” section, which help users organise their tasks more effectively. The interface is clean and consistent across all pages, making it easy to navigate.
+One of the main strengths of the project is that it works reliably and all features are connected to the database correctly. The use of session handling ensures that user data is secure and only accessible after login. The system also follows a logical structure, which makes it easy to understand and use.
+There was however, there were some challenges during development. An issue that was occuring was with the calendar feature, where completed tasks were still appearing as active (green dots). This required debugging and changes to the database query. There were also some layout inconsistencies between pages that needed to be fixed. In addition, working with PHP and MySQL required time to fully understand how data flows between the frontend and backend.
+If the project were to be improved further, several enhancements could be added. For example, the mini calendar could be expanded into a full interactive calendar. Additional features such as notifications, reminders, or task prioritisation filters could also improve usability. The user interface could be further refined with animations and better responsiveness for mobile devices.
+In conclusion, the project meets its original requirements and demonstrates a clear understanding of web development concepts, while also showing areas for future improvement.
+
+
+Section 10:
+Finally, it is worth noting that the project has successfully achieved its aim of creating a functional web-based task management system. This is because the system enables clients and users to manage their tasks efficiently through a number of features such as creating, completing, deleting, and restoring tasks.The inclusion of the mini calendar and “Due Today” section further improves usability by helping users keep track of their tasks.
+Throughout the development process, key web development concepts were applied, including database integration, session management, and user interface design. The project also demonstrated an understanding of structured development approaches, with features being built and tested incrementally.
+All round, the final developed system meets both the user and system requirements and provides a solid foundation for further improvements. The project has also helped develop practical skills in full-stack web development and problem-solving.
+
+
 
 
 
