@@ -99,6 +99,14 @@ The main pages in the system include:
 
 A sidebar navigation menu is used across all pages so users can move between sections easily. The design is consistent across the system, which improves usability and makes the overall experience smoother.
 
+4.4 Alternative considerations:
+During the design phase, various alternatives were explored before reaching a conclusion on the structure of the system. The alternatives included developing a more complex system with a JavaScript framework, which would allow for a more dynamic interface with the help of React. However, this option was ruled out as the complexity of the code would increase, which was not required for a simple task planner system.
+
+The other alternative was to implement a full calendar system instead of a mini calendar. The full calendar would allow for a number of features, including drag-and-drop, which would provide a much better visual experience. However, this option was ruled out as the implementation of a full calendar would require a number of libraries, which would increase the complexity of the code. The other option of a mini calendar was implemented as it would provide a good visual overview, which would satisfy the requirements of the users.
+
+During the database design phase, the option of splitting the tasks into multiple tables was explored. However, a single table structure was implemented to keep the complexity of the code simple, efficient, and easier to manage, as the complexity of the database structure was not required. 
+Overall, the final design choices were made based on balancing functionality, simplicity, and development time, ensuring the system meets it's requirements without unnecessary complexity.
+
 Screenshot 1: Dashboard:
 <img width="1440" height="810" alt="image" src="https://github.com/user-attachments/assets/a8ee633f-169b-4371-bc4a-8ac9c0dbeecf" />
 
@@ -112,13 +120,14 @@ Screenshot 4- Add Tasks Form:
 <img width="1440" height="810" alt="image" src="https://github.com/user-attachments/assets/9f3c4fe8-6852-4a17-bc9f-233ba2bce411" />
 
 ## 5. Implementation
-The system was developed using a combination of frontend and backend technologies. HTML and CSS were used to design the layout and overall appearance of the application, focusing on keeping the interface clean and easy to use. PHP was used for the backend to handle all the logic, including processing user input, managing sessions, and communicating with the database. MySQL was used to store all task-related data such as titles, descriptions, due dates, and task status. XAMPP was used as the local development environment, allowing the application to run on a local server during development and testing.
+The system was developed by utilizing a combination of both frontend and backend technologies. The design of the user interface/user experience of the application was achieved through the use of HTML and CSS. The main objective of the design was to ensure a clean interface. The backend of the application was developed through the use of PHP for all the logic. The logic included handling user input, session handling, and interacting with the database. The MySQL database was used for storing all task-related information, including title, description, due dates, and task status. XAMPP was used as a local environment for developing and testing the application.
 
-The system includes several key features that were developed step by step throughout the project. Users are able to add new tasks by entering details such as title, description, due date, priority, and category. These tasks are then stored in the database and displayed on the tasks page. Users can view all their active tasks in a structured list, making it easy to see what needs to be done. Tasks can be marked as completed, which moves them to the completed tasks section. If needed, completed tasks can also be restored back to the main task list. The system also allows users to delete tasks permanently, removing them completely from the database.
+This system has a number of important features, and they were developed gradually. The user can add new tasks by filling out the information regarding the title, description, due date, priority, and category. The tasks are stored in the database and displayed on the page. The user can view all their tasks in a structured list, making it easy to understand what needs to be done. The tasks can also be marked as completed, and they are displayed in the section for completed tasks. The tasks can be restored back to the main list of tasks if needed. Users can also delete tasks, and they are then permanently removed from the database.
 
 A mini calendar feature was implemented on the dashboard to give users a visual overview of their tasks. Instead of acting as a full calendar system, it highlights specific dates that contain tasks using small indicators. Users can click on a date to view tasks scheduled for that particular day. This provides a simple but effective way to track tasks without overcomplicating the interface.
 
-Additionally, the dashboard includes a "Due Today" section, which highlights tasks that need to be completed on the current date. A consistent navigation system was implemented using a sidebar, allowing users to move between different pages easily. All features were developed incrementally and tested as they were built, which helped identify and fix issues early.
+Moreover, the dashboard has a section called "Due Today" that shows tasks that are due on the current date. A navigation system has been consistently applied throughout the project, which has a sidebar that enables easy navigation from one page to another. The features were built in an incremental manner, which helped in testing and identifying bugs.
+
 
 Below is an example of how a new task is added to the database using PHP:
 
@@ -137,20 +146,20 @@ if (!isset($_SESSION['user_id'])) {
 ## 6. Project Management
 The development of this project followed an Agile-inspired approach, where the system was built gradually in stages rather than all at once. Features were implemented step by step, tested, and then improved based on any issues that were identified. This allowed the project to develop in a flexible way and made it easier to fix problems early.
 
-The development process began with planning the layout and structure of the system, including how tasks would be stored and displayed. After this, the basic functionality such as adding and viewing tasks was implemented. Once the core features were working, additional features such as completing tasks, restoring tasks, and deleting tasks were added.
+This process began by planning how the system would be structured in terms of its layout. After planning, the basic functionality of adding tasks and viewing tasks was implemented. After, the implementation of other features, including completing tasks, restoring tasks, and deleting tasks, was done.
 
-As development progressed, more advanced functionality such as the mini calendar and "Due Today" section were introduced. These features were tested and refined to ensure they worked correctly and improved the overall usability of the system.
+As the development progressed, features like the mini calendar and the "Due Today" section were added. These features were also tested and refined to ensure they worked properly and made the system easier to use.
 
 Throughout the project, regular testing and adjustments were made. For example, an issue was identified where completed tasks were still showing as active on the calendar. This was resolved by updating the logic to ensure only active tasks were displayed. Other improvements included fixing layout inconsistencies and improving navigation between pages.
 
 A simplified development timeline is shown below:
 
-| Week | Work Completed |
-|------|---------------|
-| Week 1 | Initial planning, system structure, and UI design |
-| Week 2 | Implementing database, login system, and task creation |
-| Week 3 | Adding task completion, deletion, restore features, and mini calendar |
-| Week 4 | Testing, bug fixes (including calendar issues), and final UI improvements |
+<img width="1200" height="600" alt="image" src="https://github.com/user-attachments/assets/623d9030-2116-4f4e-97c1-0dea58dea76a" />
+
+
+Development meeting logs: 
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/58b3679d-ab9d-4ccc-ac91-8921711f63c6" />
+
 
 This iterative process reflects Agile principles such as continuous improvement, incremental development, and responding to issues as they arise.
 
