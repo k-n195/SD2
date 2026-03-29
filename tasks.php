@@ -83,7 +83,28 @@ function priorityBadgeClass($priority) {
 
           <?php if ($totalActiveTasks > 0): ?>
             <div class="task-list">
+              <?php $lastDueDate = null; ?>
+
               <?php while ($task = mysqli_fetch_assoc($result)): ?>
+                <?php
+                  $currentDueDate = !empty($task['due_date']) ? $task['due_date'] : 'no-date';
+
+                  if ($currentDueDate !== $lastDueDate):
+                ?>
+                  <div class="task-date-heading" style="margin: 24px 0 12px; font-size: 1.1rem; font-weight: 700; color: #1f2937;">
+                    <?php
+                      if ($currentDueDate === 'no-date') {
+                          echo 'No Due Date';
+                      } else {
+                          echo date('j F Y', strtotime($currentDueDate));
+                      }
+                    ?>
+                  </div>
+                <?php
+                    $lastDueDate = $currentDueDate;
+                  endif;
+                ?>
+
                 <div class="task-item">
                   <div class="task-main">
                     <div class="task-top-row">
