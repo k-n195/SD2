@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'db.php';
+date_default_timezone_set('Europe/London');
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -8,6 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $message = "";
+$today = date('Y-m-d');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_SESSION['user_id'];
@@ -19,13 +21,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $category = mysqli_real_escape_string($conn, $_POST['category']);
     $status = mysqli_real_escape_string($conn, $_POST['status']);
 
-    $sql = "INSERT INTO tasks (user_id, title, description, due_date, priority, category, status)
-            VALUES ('$user_id', '$title', '$description', '$due_date', '$priority', '$category', '$status')";
-
-    if (mysqli_query($conn, $sql)) {
-        $message = "Task added successfully.";
+    if (!empty($due_date) && $due_date < $today) {
+        $message = "You cannot add a task in the past. Please select today or a future date.";
     } else {
-        $message = "Error: " . mysqli_error($conn);
+        $sql = "INSERT INTO tasks (user_id, title, description, due_date, priority, category, status)
+                VALUES ('$user_id', '$title', '$description', '$due_date', '$priority', '$category', '$status')";
+
+        if (mysqli_query($conn, $sql)) {
+            $message = "Task added successfully.";
+        } else {
+            $message = "Error: " . mysqli_error($conn);
+        }
     }
 }
 ?>
@@ -70,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="form-card">
 
           <?php if (!empty($message)) : ?>
-            <p style="margin-bottom: 20px; font-weight: bold; color: #16a34a;">
+            <p style="margin-bottom: 20px; font-weight: bold; color: <?php echo (strpos($message, 'successfully') !== false) ? '#16a34a' : '#dc2626'; ?>;">
               <?php echo htmlspecialchars($message); ?>
             </p>
           <?php endif; ?>
@@ -90,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form-row">
               <div class="form-group">
                 <label for="due_date">Due Date</label>
-                <input type="date" id="due_date" name="due_date">
+                <input type="date" id="due_date" name="due_date" min="<?php echo $today; ?>">
               </div>
 
               <div class="form-group">
